@@ -1,10 +1,12 @@
 # Use MATLAB with GitLab CI/CD
 You can use [GitLab&trade; CI/CD](https://docs.gitlab.com/ee/ci/index.html) to run MATLAB&reg; scripts, functions, and statements as part of your pipeline. You also can run your MATLAB and Simulink&reg; tests and generate artifacts such as JUnit test results and Cobertura code coverage reports. 
 
-To run MATLAB code and Simulink models with GitLab CI/CD, your runner must use the Docker executor to run MATLAB within a container. The [MATLAB Container on Docker Hub](https://www.mathworks.com/help/cloudcenter/ug/matlab-container-on-docker-hub.html) lets you run your build using MATLAB R2020b or a later release. If your build requires additional toolboxes, use a custom MATLAB container instead. For more information on how to create and use a custom MATLAB container, see [Create a Custom MATLAB Container](https://www.mathworks.com/help/cloudcenter/ug/create-a-custom-matlab-container.html).
+The `MATLAB.gitlab-ci.yml` [template](https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/MATLAB.gitlab-ci.yml) provides you with jobs that show how to run MATLAB scripts, functions, statements, and tests. To run MATLAB code and Simulink models based on this template, you must use the Docker executor to run MATLAB within a container. The [MATLAB Container on Docker Hub](https://www.mathworks.com/help/cloudcenter/ug/matlab-container-on-docker-hub.html) lets you run your build using MATLAB R2020b or a later release. If your build requires additional toolboxes, use a custom MATLAB container instead. For more information on how to create and use a custom MATLAB container, see [Create a Custom MATLAB Container](https://www.mathworks.com/help/cloudcenter/ug/create-a-custom-matlab-container.html).
+
+>**Note:** In addition to the Docker executor, GitLab Runner implements other types of executors that can be used to run your builds. See [Executors](https://docs.gitlab.com/runner/executors/) for more information.
 
 ## MATLAB.gitlab-ci.yml Template
-The `MATLAB.gitlab-ci.yml` [template](https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/MATLAB.gitlab-ci.yml) provides you with jobs that show how to run MATLAB scripts, functions, statements, and tests. You can choose this template when you create a `.gitlab-ci.yml` file in the UI.
+You can access the `MATLAB.gitlab-ci.yml` template when you create a `.gitlab-ci.yml` file in the UI.
 
 ![template](https://user-images.githubusercontent.com/48831250/166474348-2e106005-23eb-4d62-a0ba-3387bbfcb20a.png)
 
