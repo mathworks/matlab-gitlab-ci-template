@@ -1,7 +1,7 @@
 # Use MATLAB with GitLab CI/CD
-You can use [GitLab&trade; CI/CD](https://docs.gitlab.com/ee/ci/index.html) to build and test your MATLAB&reg; project as part of your pipeline. For example, you can identify the code issues in your project, run your tests and generate test and coverage artifacts, and package your files into a toolbox.
+You can use [GitLab&trade; CI/CD](https://docs.gitlab.com/ee/ci/index.html) to build and test your MATLAB&reg; project as part of your pipeline. For example, you can identify code issues in your project, run your tests and generate test and coverage artifacts, and package your files into a toolbox.
 
-The `MATLAB.gitlab-ci.yml` [template](https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/MATLAB.gitlab-ci.yml) provides you with jobs that show how to run MATLAB statements, tests, and builds. To run MATLAB code and Simulink models based on this template, you must use the Docker executor to run MATLAB within a container. The [MATLAB Container on Docker Hub](https://www.mathworks.com/help/cloudcenter/ug/matlab-container-on-docker-hub.html) lets you run your build using MATLAB R2020b or a later release. If your build requires additional toolboxes, use a custom MATLAB container instead. For more information on how to create and use a custom MATLAB container, see [Create a Custom MATLAB Container](https://www.mathworks.com/help/cloudcenter/ug/create-a-custom-matlab-container.html).
+The `MATLAB.gitlab-ci.yml` [template](https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/MATLAB.gitlab-ci.yml) provides you with jobs that show how to run MATLAB statements, tests, and builds. To run MATLAB code and Simulink&reg; models based on this template, you must use the Docker executor to run MATLAB within a container. The [MATLAB Container on Docker Hub](https://www.mathworks.com/help/cloudcenter/ug/matlab-container-on-docker-hub.html) lets you run your build using MATLAB R2020b or a later release. If your build requires additional toolboxes, use a custom MATLAB container instead. For more information on how to create and use a custom MATLAB container, see [Create a Custom MATLAB Container](https://www.mathworks.com/help/cloudcenter/ug/create-a-custom-matlab-container.html).
 
 >**Note:** In addition to the Docker executor, GitLab Runner implements other types of executors that can be used to run your builds. See [Executors](https://docs.gitlab.com/runner/executors/) for more information.
 
@@ -10,7 +10,7 @@ You can access the `MATLAB.gitlab-ci.yml` template when you create a `.gitlab-ci
 
 ![template](https://user-images.githubusercontent.com/48831250/166474348-2e106005-23eb-4d62-a0ba-3387bbfcb20a.png)
 
-The template has four jobs:
+The template includes four jobs:
 
 * `command` — Run MATLAB scripts, functions, and statements.                
 * `test` — Run tests authored using the MATLAB unit testing framework or Simulink Test&trade;.
@@ -33,7 +33,7 @@ The jobs in the template use the `matlab -batch` syntax to start MATLAB. Additio
 ```
 
 ## Examples
-Each of these examples shows how to specify the contents of a job in your `.gitlab-ci.yml`.
+Each of these examples shows how to specify the contents of a job in your `.gitlab-ci.yml` file.
 
 ### Run a Script
 Run the commands in a file named `myscript.m` in the root of your repository.
@@ -86,10 +86,10 @@ artifacts:
 ```
 
 ### Run MATLAB Build
-Use the [MATLAB build tool](https://www.mathworks.com/help/matlab/matlab_prog/overview-of-matlab-build-tool.html) to run the default tasks in a file named `buildfile.m`, in the root of your repository, as well as all the tasks on which they depend. 
+Use the [MATLAB build tool](https://www.mathworks.com/help/matlab/matlab_prog/overview-of-matlab-build-tool.html) to run the default tasks in a file named `buildfile.m` located in the root of your repository, as well as all the tasks on which they depend. 
 
 ```yaml
-command:
+build:
    extends: .matlab_defaults
    script: matlab -batch "buildtool"
 ```
