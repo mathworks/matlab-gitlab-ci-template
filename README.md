@@ -1,5 +1,10 @@
+# Archived Repository Notice
+
+> **⚠️ Announcement:**  
+> This repository has been archived and is no longer maintained. For the latest information on how to run MATLAB&reg; in your GitLab&reg; CI/CD pipeline, see the [`build` component on GitLab CI/CD Catalog](https://gitlab.com/explore/catalog/mathworks/components/matlab).
+
 # Use MATLAB with GitLab CI/CD
-You can use [GitLab&trade; CI/CD](https://docs.gitlab.com/ee/ci/index.html) to build and test your MATLAB&reg; project as part of your pipeline. For example, you can identify code issues in your project, run your tests and generate test and coverage artifacts, and package your files into a toolbox.
+You can use [GitLab CI/CD](https://docs.gitlab.com/ee/ci/index.html) to build and test your MATLAB project as part of your pipeline. For example, you can identify code issues in your project, run your tests and generate test and coverage artifacts, and package your files into a toolbox.
 
 The `MATLAB.gitlab-ci.yml` [template](https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/MATLAB.gitlab-ci.yml) provides you with jobs that show how to run MATLAB statements, tests, and builds. To run MATLAB code and Simulink&reg; models based on this template, you must use the Docker&reg; executor to run MATLAB within a container. You can use the [MATLAB Container on Docker Hub](https://www.mathworks.com/help/cloudcenter/ug/matlab-container-on-docker-hub.html) to run your build using MATLAB R2020b or a later release. Alternatively, you can create your own container for MATLAB and other MathWorks&reg; products. For more information on how to create and use a custom MATLAB container, see [Create a MATLAB Container Image for Non-Interactive Workflows](https://github.com/mathworks-ref-arch/matlab-dockerfile/blob/main/alternates/non-interactive/README.md).
 
